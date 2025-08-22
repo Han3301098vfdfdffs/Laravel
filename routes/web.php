@@ -4,7 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', HomeController::class);
 
 //  //Ruta para mostrar el listado de registros
 // Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
@@ -30,11 +30,3 @@ Route::get('/', [HomeController::class, 'index']);
 Route::resource('articulos', PostController::class)
     ->parameters(['articulos' => 'post'])    
     ->names('posts');
-
-// Route::resource('posts', PostController::class)
-//     ->except('create', 'edit');
-
-// Route::apiResourceresource('posts', PostController::class);
-
-// Route::resource('posts', PostController::class)
-//     ->only(['index', 'show']);
