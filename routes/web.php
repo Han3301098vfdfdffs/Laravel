@@ -6,27 +6,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 
-//  //Ruta para mostrar el listado de registros
-// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::prefix('/posts')->name('post.')->controller(PostController::class)->group(function(){
 
-//  //Ruta para mostrar un formulario para crear un registro
-// Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    //Ruta para mostrar el listado de registros
+    Route::get('/', 'index')->name('index');
 
-//  //Ruta para guardar un registro
-// Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+    //Ruta para mostrar un formulario para crear un registro
+    Route::get('/create', 'create')->name('create');
 
-//  //Ruta para mostrar un registro
-// Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+    //Ruta para guardar un registro
+    Route::post('/', 'store')->name('store');
 
-//  //Ruta para mostrar un formulario para editar un registro 
-// Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
-//  //Ruta para actualizar un registro
+    //Ruta para mostrar un registro
+    Route::get('/{post}', 'show')->name('show');
 
-// Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+    //Ruta para mostrar un formulario para editar un registro 
+    Route::get('/{post}/edit', 'edit')->name('edit');
+    //Ruta para actualizar un registro
 
-//  //Ruta para eliminar un registro
-//  Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::put('/{post}', 'update')->name('update');
 
-Route::resource('articulos', PostController::class)
-    ->parameters(['articulos' => 'post'])    
-    ->names('posts');
+    //Ruta para eliminar un registro
+    Route::delete('/{post}', 'destroy')->name('destroy');
+
+});
+// Route::resource('articulos', PostController::class)
+//     ->parameters(['articulos' => 'post'])    
+//     ->names('posts');
