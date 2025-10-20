@@ -8,5 +8,7 @@
     </head>
     <body>
         <h1>Aquí se mostrará el listado de posts</h1>
+
+        {!! $etiqueta !!}
     </body>
 </html>
