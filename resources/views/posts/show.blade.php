@@ -7,6 +7,8 @@
         <title>Coders Free</title>
     </head>
     <body>
-        <h1>Aquí se mostrará el detalle de un posts</h1>
+        <h1>Aquí se mostrará el detalle del post <?php echo $post ?></h1>
+
+        <p><?php echo $prueba?></p>
     </body>
 </html>

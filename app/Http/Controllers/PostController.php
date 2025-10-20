@@ -19,11 +19,11 @@ class PostController extends Controller
     }
 
     public function show($post){
-        return view('posts.show');
+        return view('posts.show', compact('post'));
     }
 
     public function edit($post){
-        return view('posts.edit');
+        return view('posts.edit', compact('post'));
     }
 
     public function update($post){
