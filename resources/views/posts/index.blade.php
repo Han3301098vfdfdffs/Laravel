@@ -9,6 +9,6 @@
     <body>
         <h1>Aquí se mostrará el listado de posts</h1>
 
-        {!! $etiqueta !!}
+        {{ $prueba }}
     </body>
 </html>
