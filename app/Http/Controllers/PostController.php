@@ -21,8 +21,9 @@ class PostController extends Controller
                 'content' => 'Contenido del post 3']
 
         ];
+        $valor_null = null;
 
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('posts', 'valor_null'));
     }
 
     public function create(){
