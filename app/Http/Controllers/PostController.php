@@ -7,8 +7,24 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function index(){
-        $etiqueta  = "<p>Este es un parrafo</p>";
-        return view('posts.index', compact('etiqueta'));
+
+        $posts = [
+            [
+                'title' => 'Post 1',
+                'content' => 'Contenido del post 1'
+            ],
+            [
+                'title' => 'Post 2',
+                'content' => 'Contenido del post 2'
+            ],
+            [   'title' => 'Post 3',
+                'content' => 'Contenido del post 3']
+
+        ];
+
+        $dia = 8;
+
+        return view('posts.index', compact('posts', 'dia'));
     }
 
     public function create(){
