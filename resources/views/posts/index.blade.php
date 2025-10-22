@@ -7,37 +7,23 @@
         <title>Coders Free</title>
     </head>
     <body>
-        {{-- @for ($i = 1; $i <= $count; $i++)
+
+        @for ($i = 1; $i <= $count; $i++)
+
+            {{-- @continue ($i % 3 == 0) --}}
+
+            @break ($i == 8)
 
             <p>
-
-                @for ($j = 1; $j <= $i; $j++)
-
-                    *
-                    
-                @endfor
-                
-            </p>
-        @endfor --}}
-
-        @php
-            $i = 1;
-        @endphp
-
-        @while ($i <= $count)
-
-            <p>
-                *
+                {{ $i}}
             </p>
             
-            @php
-                $i += 1;
-            @endphp
+        @endfor
 
-
-            
-        @endwhile
-
-
+        <p>
+            <b>
+                Saliste del bucle
+            </b>
+        </p>
     </body>
 </html>
