@@ -8,23 +8,24 @@ class PostController extends Controller
 {
     public function index(){
 
-        $posts = [
-            [
-                'title' => 'Post 1',
-                'content' => 'Contenido del post 1'
-            ],
-            [
-                'title' => 'Post 2',
-                'content' => 'Contenido del post 2'
-            ],
-            [   'title' => 'Post 3',
-                'content' => 'Contenido del post 3']
+        // $posts = [
+        //     [
+        //         'title' => 'Post 1',
+        //         'content' => 'Contenido del post 1'
+        //     ],
+        //     [
+        //         'title' => 'Post 2',
+        //         'content' => 'Contenido del post 2'
+        //     ],
+        //     [   'title' => 'Post 3',
+        //         'content' => 'Contenido del post 3']
 
-        ];
+        // ];
 
-        $dia = 8;
+        $posts = [];
 
-        return view('posts.index', compact('posts', 'dia'));
+
+        return view('posts.index', compact('posts'));
     }
 
     public function create(){
