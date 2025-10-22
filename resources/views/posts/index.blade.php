@@ -7,31 +7,36 @@
         <title>Coders Free</title>
     </head>
     <body>
+        {{-- @for ($i = 1; $i <= $count; $i++)
 
-        <ul>
+            <p>
 
-            @forelse ($posts as $post)
+                @for ($j = 1; $j <= $i; $j++)
 
-                <li>
+                    *
                     
-                    <h2>
-                        {{$post['title']}}
-                    </h2>
+                @endfor
+                
+            </p>
+        @endfor --}}
 
-                    <p>
-                        {{$post['content']}}
-                    </p>
-                </li>
+        @php
+            $i = 1;
+        @endphp
 
-            @empty
+        @while ($i <= $count)
 
-                <li>
-                    No hay posts
-                </li>
+            <p>
+                *
+            </p>
+            
+            @php
+                $i += 1;
+            @endphp
 
-            @endforelse
 
-        </ul>
+            
+        @endwhile
 
 
     </body>
